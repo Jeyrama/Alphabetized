@@ -22,11 +22,33 @@ const alphabetized = s => s
 
 // or
 
-  function alphabetized(s) {
-    let ans="";
-    for (let i=97; i<123; ++i)
-      for (let j=0; j<s.length; j++)
-        if (s[j].toLowerCase().charCodeAt()==i)
-        ans+=s[j]
-    return ans
-   }
+function alphabetized(s) {
+  let ans="";
+  for (let i=97; i<123; ++i)
+    for (let j=0; j<s.length; j++)
+      if (s[j].toLowerCase().charCodeAt()==i)
+      ans+=s[j]
+  return ans
+  }
+
+// or
+
+function alphabetized(s) {
+  let alphabet = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
+  s = s.split(' ').join('').split('')
+  let num = [];
+  let answer = '';
+  
+  for(let elem of s){
+    num.push([alphabet.indexOf(elem.toUpperCase()), s.indexOf(elem)])
+  }
+  
+  num = num.sort((a, b) => a[0] - b[0]);
+  
+  for(let elem of num){
+    if(elem[0] != -1){
+    answer += s[elem[1]]
+    }
+  }
+  return answer
+}
