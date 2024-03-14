@@ -12,3 +12,10 @@ Example:
 
 
 // Solution
+
+const alphabetized = s => s
+  .replace(/[^a-zA-Z]/g, '')
+  .split``
+  .sort((x, y) => (x.toUpperCase() === y.toUpperCase()) ? 
+    (s.indexOf(x) - s.indexOf(y)) : x.localeCompare(y))
+  .join``;
