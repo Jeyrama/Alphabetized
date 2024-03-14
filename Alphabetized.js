@@ -19,3 +19,14 @@ const alphabetized = s => s
   .sort((x, y) => (x.toUpperCase() === y.toUpperCase()) ? 
     (s.indexOf(x) - s.indexOf(y)) : x.localeCompare(y))
   .join``;
+
+// or
+
+  function alphabetized(s) {
+    let ans="";
+    for (let i=97; i<123; ++i)
+      for (let j=0; j<s.length; j++)
+        if (s[j].toLowerCase().charCodeAt()==i)
+        ans+=s[j]
+    return ans
+   }
